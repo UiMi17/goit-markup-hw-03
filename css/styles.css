@@ -3,6 +3,7 @@
   --primary-color: #212121;
   --primary-white-color: #ffffff;
   --primary-accent-color: #2196f3;
+  --secondary-accent-color: #188ce8;
   --secondary-color: #757575;
   --secondary-white-color: #f5f4fa;
   --cards-border-color: #eeeeee;
@@ -44,7 +45,10 @@ button {
 }
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 p {
@@ -53,7 +57,7 @@ p {
 
 /* Container */
 .container {
-  width: 1200px;
+  max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -98,15 +102,22 @@ header {
   border-bottom: 1px solid #ececec;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header-logo {
-  color: var(--primary-accent-color);
+  display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+  margin-right: 93px;
+  color: var(--primary-accent-color);
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
-  display: block;
 }
 
 .logo-item {
@@ -114,19 +125,26 @@ header {
 }
 
 /* Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav-list {
+  display: flex;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 
-.nav-list .nav-link {
-  color: var(--primary-color);
+.nav-item + .nav-item {
+  margin-left: 50px;
 }
 
-.nav-link.link {
-  text-decoration: none;
+.nav-item > .nav-link {
+  display: block;
+  color: var(--primary-color);
 }
 
 .nav-link:hover,
@@ -142,16 +160,9 @@ header {
   color: var(--primary-accent-color);
 }
 
-/**
-  |============================
-  | Header contacts
-  |============================
-*/
-.contacts-list.list {
-  list-style: none;
-}
-
+/* Header contacts */
 .contacts-list {
+  display: flex;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -159,11 +170,12 @@ header {
 }
 
 .contacts-list .contacts-link {
+  display: block;
   color: var(--secondary-color);
 }
 
-.contacts-link.link {
-  text-decoration: none;
+.contacts-item + .contacts-item {
+  margin-left: 50px;
 }
 
 .contacts-link:hover,
@@ -200,18 +212,13 @@ header {
   | Buttons
   |============================
 */
-.button {
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
-}
 .button-primary {
   color: var(--primary-white-color);
   background-color: var(--primary-accent-color);
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
-  line-height: 1.87;
+  line-height: calc(30 / 16);
   min-width: 216px;
   letter-spacing: 0.06em;
   padding: 10px 32px;
@@ -227,9 +234,21 @@ header {
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
+  max-width: 130px;
+  padding: 6px 22px;
   line-height: 1.6;
   text-align: center;
   letter-spacing: 0.03em;
+}
+
+.button-active {
+  color: var(--primary-white-color);
+  background-color: var(--primary-accent-color);
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  background-color: var(--secondary-accent-color);
 }
 
 .button-secondary:hover,
@@ -243,6 +262,11 @@ header {
   | Features
   |============================
 */
+.features-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 .features-item {
   max-width: 270px;
 }
@@ -271,12 +295,18 @@ header {
 .work-section {
   padding-top: 0;
 }
+
 .section-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
   text-align: center;
   margin-bottom: 50px;
+}
+
+.work-list {
+  display: flex;
+  gap: 30px;
 }
 
 /**
@@ -290,12 +320,22 @@ header {
   padding-bottom: 94px;
 }
 
+.team-list {
+  display: flex;
+  gap: 30px;
+}
+
+.team-item {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
 .team-list .list-title {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.18;
-  padding-top: 30px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .team-list .list-text {
@@ -303,6 +343,15 @@ header {
   font-size: 16px;
   line-height: 1.18;
 }
+
+.content-wrapper {
+  display: block;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--primary-white-color);
+}
+
 /**
   |============================
   | Portfolio
@@ -310,11 +359,21 @@ header {
 */
 
 /* Filter */
-.filter-container {
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
   margin-bottom: 50px;
+
 }
 
 /* Cards */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
 .card-title-container {
   max-width: 370px;
   padding: 20px 24px;
@@ -330,7 +389,6 @@ header {
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin-top: 20px;
   margin-bottom: 4px;
 }
 

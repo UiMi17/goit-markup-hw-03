@@ -29,33 +29,34 @@
   <body class="page">
     <!-- Header -->
     <header>
-      <div class="container">
+      <div class="container header-container">
         <!-- Navigation -->
-        <nav>
+        <nav class="main-nav">
           <a href="./index.html" class="header-logo link"
             >Web<span class="logo-item">Studio</span></a
           >
-
           <ul class="nav-list list">
-            <li>
+            <li class="nav-item">
               <a href="./index.html" class="nav-link link"
                 ><span class="link-studio-text">Студія</span></a
               >
             </li>
-            <li>
+            <li class="nav-item">
               <a href="./portfolio.html" class="nav-link link">Портфоліо</a>
             </li>
-            <li><a href="" class="nav-link link">Контакти</a></li>
+            <li class="nav-item">
+              <a href="" class="nav-link link">Контакти</a>
+            </li>
           </ul>
         </nav>
         <!-- Header contacts list -->
         <ul class="contacts-list list">
-          <li>
+          <li class="contacts-item">
             <a href="mailto:info@devstudio.com" class="contacts-link link"
               >info@devstudio.com</a
             >
           </li>
-          <li>
+          <li class="contacts-item">
             <a href="tel:+380961111111" class="contacts-link link"
               >+38 096 111 11 11</a
             >
@@ -69,9 +70,7 @@
       <section class="section hero-section">
         <div class="container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="button button-primary">
-            Замовити послугу
-          </button>
+          <button type="button" class="button-primary">Замовити послугу</button>
         </div>
       </section>
       <!-- Features section -->
@@ -115,19 +114,23 @@
         <div class="container">
           <h2 class="section-title">Чим ми займаємося</h2>
           <ul class="work-list list">
-            <li>
+            <li class="work-item">
               <img
                 src="./images/work/box1.jpg"
                 alt="Проектування та розробка на комп'ютері"
                 width="370"
                 height="294"
               />
+            </li>
+            <li class="work-item">
               <img
                 src="./images/work/box2.jpg"
                 alt="Обрання підходящого дизайну для мобільного сайту"
                 width="370"
                 height="294"
               />
+            </li>
+            <li class="work-item">
               <img
                 src="./images/work/box3.jpg"
                 alt="Обрання палітри для оформлення"
@@ -151,8 +154,10 @@
                 width="270"
                 height="260"
               />
-              <h3 class="list-title">Ігор Дем'яненко</h3>
-              <p class="list-text">Product Designer</p>
+              <div class="content-wrapper">
+                <h3 class="list-title">Ігор Дем'яненко</h3>
+                <p class="list-text">Product Designer</p>
+              </div>
             </li>
             <li class="team-item">
               <img
@@ -161,8 +166,10 @@
                 width="270"
                 height="260"
               />
-              <h3 class="list-title">Ольга Рєпіна</h3>
-              <p class="list-text">Frontend Developer</p>
+              <div class="content-wrapper">
+                <h3 class="list-title">Ольга Рєпіна</h3>
+                <p class="list-text">Frontend Developer</p>
+              </div>
             </li>
             <li class="team-item">
               <img
@@ -171,8 +178,10 @@
                 width="270"
                 height="260"
               />
-              <h3 class="list-title">Микола Тарасов</h3>
-              <p class="list-text">Marketing</p>
+              <div class="content-wrapper">
+                <h3 class="list-title">Микола Тарасов</h3>
+                <p class="list-text">Marketing</p>
+              </div>
             </li>
             <li class="team-item">
               <img
@@ -181,8 +190,10 @@
                 width="270"
                 height="260"
               />
-              <h3 class="list-title">Михайло Єрмаков</h3>
-              <p class="list-text">UI Designer</p>
+              <div class="content-wrapper">
+                <h3 class="list-title">Михайло Єрмаков</h3>
+                <p class="list-text">UI Designer</p>
+              </div>
             </li>
           </ul>
         </div>
