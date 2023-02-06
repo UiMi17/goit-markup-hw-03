@@ -7,6 +7,7 @@
   --secondary-color: #757575;
   --secondary-white-color: #f5f4fa;
   --cards-border-color: #eeeeee;
+  --secondary-gray-color: #afb1b8;
 }
 
 /**
@@ -170,12 +171,27 @@ header {
 }
 
 .contacts-list .contacts-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 32px;
+  padding-bottom: 31px;
   color: var(--secondary-color);
+  fill: currentColor;
 }
 
 .contacts-item + .contacts-item {
-  margin-left: 50px;
+  margin-left: 30px;
+}
+
+.icon-wrapper {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-white-color);
 }
 
 .contacts-link:hover,
@@ -191,6 +207,17 @@ header {
 .hero-section {
   padding-top: 200px;
   padding-bottom: 200px;
+  max-width: 1600px;
+  height: 600px;
+  margin: 0 auto;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/hero/hero-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-color: #2f303a;
 }
 
@@ -347,14 +374,83 @@ header {
   color: var(--secondary-color);
   font-size: 16px;
   line-height: 1.18;
+  margin-bottom: 16px;
 }
 
 .content-wrapper {
   display: block;
+  min-height: 168px;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 32px;
   background-color: var(--primary-white-color);
+}
+
+.social-list {
+  display: flex;
+  color: var(--secondary-gray-color);
+  max-width: 206px;
+  min-height: 44px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-item > .social-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  fill: currentColor;
+}
+
+.social-link:hover,
+.social-link:focus {
+  fill: var(--primary-white-color);
+  background-color: var(--primary-accent-color);
+  border-radius: 50%;
+}
+
+/**
+  |============================
+  | Clients
+  |============================
+*/
+.company-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-list > .company-item {
+  width: 170px;
+  height: 92px;
+}
+
+.company-item > .company-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-gray-color);
+  border: 1px solid var(--secondary-gray-color);
+  border-radius: 4px;
+}
+
+.company-link > .company-icon {
+  fill: currentColor;
+}
+
+.company-link:hover,
+.company-link:focus {
+  border-color: var(--primary-accent-color);
+  color: var(--primary-accent-color);
+  outline: none;
+}
+
+.company-icon:hover,
+.company-icon:focus {
+  fill: currentColor;
 }
 
 /**
@@ -376,6 +472,12 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+
+.card-element:hover,
+.card-element:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+  1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .card-title-container {
@@ -409,10 +511,22 @@ header {
   | Footer
   |============================
 */
+.address-container {
+  max-width: 231px;
+  min-height: 81px;
+  margin-right: 70px;
+}
+
 .footer {
   background-color: #2f303a;
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.footer > .container {
+  display: flex;
+  /* justify-content: center; */
+  align-items: baseline;
 }
 
 .footer-logo {
@@ -464,4 +578,48 @@ header {
 
 .footer .footer-address {
   font-style: normal;
+}
+
+.footer-socials-container {
+}
+
+.socials-title {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+}
+
+.footer-socials {
+  display: flex;
+  min-width: 206px;
+  min-height: 44px;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.footer-socials > .footer-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer-item > .footer-social-link {
+  display: flex;
+  color: var(--primary-white-color);
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social-link > .icon-social {
+  fill: currentColor;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background-color: var(--primary-accent-color);
+  border-radius: 50%;
 }
